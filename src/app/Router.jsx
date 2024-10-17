@@ -8,7 +8,7 @@ import CreatePage from "../pages/CreatePage";
 import DeletePage from "../pages/DeletePage";
 
 const Router = () => (
-  <BrowserRouter>
+  <BrowserRouter basename="/React_project_fundesplai">
     <Layout>
       <Routes>
         <Route index element={<HomePage />} />
