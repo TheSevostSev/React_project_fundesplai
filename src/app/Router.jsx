@@ -1,16 +1,22 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import TeamsPage from "../pages/TeamsPage";
-import TeamPage from "../pages/TeamPage";
+
+import MainLayout from "../layouts/MainLayout";
+import HomePage from "../pages/HomePage";
+import PatientsPage from "../pages/PatientsPage";
+import CreatePatientPage from "../pages/CreatePatientPage";
 
 const Router = () => (
   <BrowserRouter>
-    <Routes>
-      <Route index element={<TeamsPage />} />
-      <Route path="/teams/:id" element={<TeamPage />} />
+    <MainLayout>
+      <Routes>
+        <Route index element={<HomePage />} />
+        <Route path="/patients" element={<PatientsPage />} />
+        <Route path="/patients/create" element={<CreatePatientPage />} />
 
-      {/* Es muy recomendable añadir esta ruta para obtener un mensaje de error en el caso de que la ruta no exista. De lo contrario, si la ruta no existe llegaremos a una página en blanco */}
-      <Route path="*" element={<div>404</div>} />
-    </Routes>
+        {/* Es muy recomendable añadir esta ruta para obtener un mensaje de error en el caso de que la ruta no exista. De lo contrario, si la ruta no existe llegaremos a una página en blanco */}
+        <Route path="*" element={<div>404</div>} />
+      </Routes>
+    </MainLayout>
   </BrowserRouter>
 );
 
