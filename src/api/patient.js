@@ -9,9 +9,24 @@ const getPatients = async () => {
   return response.data;
 };
 
+const createPatient = async (patient) => {
+  const response = await backendURL.post("/", patient);
+  return response.data;
+};
+
+const editPatient = async (patient) => {
+  const response = await backendURL.put(`/${patient.id}`, patient);
+  return response.data;
+};
+
 const getPatient = async (id) => {
   const response = await backendURL.get(`/${id}`);
   return response.data;
 };
 
-export { getPatient, getPatients };
+const deletePatient = async (id) => {
+  const response = await backendURL.delete(`/${id}`);
+  return response.data;
+};
+
+export { getPatient, getPatients, createPatient, editPatient, deletePatient };
