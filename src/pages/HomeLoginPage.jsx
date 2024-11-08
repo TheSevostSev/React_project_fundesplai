@@ -38,7 +38,7 @@ const HomeLoginPage = () => {
         <button onClick={handleUserList}>Get Users</button>
       </div>
       <h2>User list</h2>
-      {users?.message == "Network Error" ? (
+      {users?.message == "Network Error" || users?.status == 401 ? (
         <p>You need to log in to perform this action!</p>
       ) : (
         users?.data?.map((user) => <p key={user.id}>1.{user.username}</p>)
