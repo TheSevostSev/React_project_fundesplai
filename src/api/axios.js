@@ -5,5 +5,6 @@ export const backendURL = axios.create({
 });
 
 export const setAuth = async (token) => {
-  backendURL.defaults.headers.common["Authorization"] = `Basic ${token}`;
+  // backendURL.defaults.headers.common["Authorization"] = `Basic ${token}`;
+  backendURL.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 };
